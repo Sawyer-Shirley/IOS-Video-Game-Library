@@ -26,6 +26,7 @@ class LibraryCell: UITableViewCell {
         
         cellTitle.text = game.title
         
+        //Genres being set depending on what the user chooses
         switch game.genre {
         case .action:
             cellGenre.text = "Action"
@@ -39,6 +40,7 @@ class LibraryCell: UITableViewCell {
             cellGenre.text = "Sandbox"
         }
         
+        //Rating being set based on what the user chooses - using the raw value to save time
         cellRating.text = game.rating.rawValue
         
         switch game.availability {

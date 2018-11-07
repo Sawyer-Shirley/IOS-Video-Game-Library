@@ -34,7 +34,7 @@ class LibraryViewController: UIViewController {
         
         tableView.reloadData()
     }
-    
+    //Transfering game info from library screen to Game Info screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "ShowGameInfo" {
 
@@ -125,15 +125,11 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 
-//ASK FOR HELP
 
     //Shows a special screen when there are no cells with games
 extension LibraryViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
-    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "table")
-    }
-    
+  //Creates title for empty library screen
     func title(forEmptyDataSet scrollView: UIScrollView?) -> NSAttributedString? {
         let text = "You have no games!"
         
@@ -141,7 +137,7 @@ extension LibraryViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
         
         return NSAttributedString(string: text, attributes: attributes)
     }
-    
+    //Gives user more information
     func description(forEmptyDataSet scrollView: UIScrollView?) -> NSAttributedString? {
         let text = "You need to add games to your library."
         
@@ -153,7 +149,7 @@ extension LibraryViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
         
         return NSAttributedString(string: text, attributes: attributes)
     }
-
+    //Labels button for the empty screen
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView?, for state: UIControl.State) -> NSAttributedString? {
         let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17.0)]
         
@@ -164,13 +160,9 @@ extension LibraryViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
         return UIColor(red:0.36, green:0.37, blue:0.61, alpha:1.0)
     }
     
-    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-        return true
+    //Sends user to add a new game when the button on empty library is pressed
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        performSegue(withIdentifier: "addNewGame", sender: self)
     }
-    
-    func emptyDataSet(_ scrollView: UIScrollView?, didTap button: UIButton?) {
-        self.performSegue( withIdentifier: "addNewGame", sender: self)
-    }
-
 }
    

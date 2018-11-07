@@ -118,6 +118,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7Rf-iz-LjW" id="M2p-1V-djE"/>
+                        <segue destination="he5-I7-Sdq" kind="show" identifier="addNewGame" id="UA9-ZQ-A73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -502,5 +503,8 @@
             <point key="canvasLocation" x="3464.8000000000002" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UA9-ZQ-A73"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.54967647790908813" green="0.89650601148605347" blue="0.61955535411834717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
